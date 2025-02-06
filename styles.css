@@ -1,0 +1,258 @@
+
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --primary-color: #2196f3;
+            --hover-color: #1976d2;
+            --border-color: #dddddd;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+            --primary-color: #4caf50;
+            --hover-color: #45a049;
+            --border-color: #444444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Header Controls */
+        .gallery-controls {
+            max-width: 1200px;
+            margin: 1rem auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            flex-grow: 1;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .theme-toggle {
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            background: var(--hover-color);
+        }
+
+        /* Filter Controls */
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 0 20px 1rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover {
+            background: var(--hover-color);
+        }
+
+        .filter-select {
+            display: none;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* Main Featured Image */
+        .featured-image {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .image-actions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .action-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: var(--hover-color);
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            height: 20%;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: 30%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 80%;
+            text-align: center;
+        }
+
+        .lightbox-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+
+        /* Lightbox Controls */
+        .lightbox-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lightbox-btn {
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .lightbox-btn:hover {
+            background: var(--hover-color);
+        }
+
+        /* Media Queries for Responsive Layout */
+        @media (max-width: 768px) {
+            .gallery-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-box {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .filter-buttons {
+                display: none;
+            }
+
+            .filter-select {
+                display: block;
+                width: 100%;
+            }
+
+            .gallery-item {
+                width: 45%;
+            }
+
+            .featured-image img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+
+            .featured-image img {
+                height: 200px;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+            }
+
+            .theme-toggle {
+                padding: 0.6rem 1.2rem;
+            }
+
+            .lightbox-btn {
+                padding: 0.3rem 0.8rem;
+            }
+        }

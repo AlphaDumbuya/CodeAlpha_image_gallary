@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gallery-controls">
+        <input type="text" class="search-box" placeholder="Search images...">
+        <button class="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <div class="filter-buttons">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="nature">Nature</button>
+        <button class="filter-btn" data-filter="city">City</button>
+        <button class="filter-btn" data-filter="people">People</button>
+    </div>
+
+    <select class="filter-select">
+        <option value="all">All</option>
+        <option value="nature">Nature</option>
+        <option value="city">City</option>
+        <option value="people">People</option>
+    </select>
+
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1738522477288-82f5db85cfc3?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8" alt="Featured Image" id="mainImage">
+        <div class="image-actions">
+            <button class="action-btn back-btn">&#8592; Back</button>
+            <button class="action-btn forward-btn">Forward &#8594;</button>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-item" data-category="nature">
+            <img src="https://images.unsplash.com/photo-1735440461430-1087fe181e3b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8" alt="Nature Image 1">
+        </div>
+        <div class="gallery-item" data-category="city">
+            <img src="https://images.unsplash.com/photo-1737100593814-8ceb04f29cca?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D" alt="City Image 1">
+        </div>
+        <div class="gallery-item" data-category="people">
+            <img src="https://images.unsplash.com/photo-1738240238942-6dfc71f7259f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D" alt="People Image 1">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
